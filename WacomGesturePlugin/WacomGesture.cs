@@ -15,6 +15,7 @@ namespace WacomGesturePlugin
         class WacomTab
         {
             private WacomGesture parent;
+            public WMT_FINGER_CALLBACK callbackDelegate;
             public int deviceID;
             public IntPtr mHitRectPtr = IntPtr.Zero;
             private bool isMoving = false;
@@ -83,7 +84,8 @@ namespace WacomGesturePlugin
                 hr.height = 1080f;
                 WacomTab wt = new WacomTab(this) { deviceID = id };
                 wt.mHitRectPtr = MemoryUtil.AllocUnmanagedBuffer(hr);
-                MTAPI.WacomMTRegisterFingerReadCallback(id, wt.mHitRectPtr, WacomMTProcessingMode.WMTProcessingModeObserver, new WMT_FINGER_CALLBACK(wt.wmtFingerCallback), IntPtr.Zero);
+                wt.callbackDelegate = new WMT_FINGER_CALLBACK(wt.wmtFingerCallback);
+                MTAPI.WacomMTRegisterFingerReadCallback(id, wt.mHitRectPtr, WacomMTProcessingMode.WMTProcessingModeObserver, wt.callbackDelegate, IntPtr.Zero);
                 wacomTabList.Add(wt);
             }
         }
