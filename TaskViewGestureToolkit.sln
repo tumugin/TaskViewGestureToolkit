@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynapticsTester", "Synaptic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBaseLib", "PluginBaseLib\PluginBaseLib.csproj", "{2094FDE0-20E3-48D7-8D62-2D7E7C2F38FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WacomGesturePlugin", "WacomGesturePlugin\WacomGesturePlugin.csproj", "{80111FFE-B4BF-44D3-8DCD-550C5E7A50FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WacomTester", "WacomTester\WacomTester.csproj", "{9BE2B62A-662A-47BB-B501-82EB487499A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{2094FDE0-20E3-48D7-8D62-2D7E7C2F38FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2094FDE0-20E3-48D7-8D62-2D7E7C2F38FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2094FDE0-20E3-48D7-8D62-2D7E7C2F38FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80111FFE-B4BF-44D3-8DCD-550C5E7A50FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80111FFE-B4BF-44D3-8DCD-550C5E7A50FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80111FFE-B4BF-44D3-8DCD-550C5E7A50FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80111FFE-B4BF-44D3-8DCD-550C5E7A50FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE2B62A-662A-47BB-B501-82EB487499A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE2B62A-662A-47BB-B501-82EB487499A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE2B62A-662A-47BB-B501-82EB487499A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE2B62A-662A-47BB-B501-82EB487499A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
