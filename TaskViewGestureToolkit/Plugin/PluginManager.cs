@@ -22,6 +22,7 @@ namespace TaskViewGestureToolkit.Plugin
             {
                 if (t.IsInterface) continue;
                 if (t.IsAbstract) continue;
+                if (t.BaseType.Name != "PluginBase") continue;
                 inst = Activator.CreateInstance(t) as PluginBase;
                 if (inst != null) break;
             }

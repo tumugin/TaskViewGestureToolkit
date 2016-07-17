@@ -44,13 +44,13 @@ namespace TaskViewGestureToolkit.Gesture
                     {
                         //left
                         Debug.WriteLine($"[{plugin.pluginName} EVENT] LEFT");
-                        inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, new VirtualKeyCode[] { VirtualKeyCode.RIGHT });
+                        inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, VirtualKeyCode.RIGHT);
                     }
                     else if (xDiff > 0)
                     {
                         //right
                         Debug.WriteLine($"[{plugin.pluginName} EVENT] RIGHT");
-                        inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, new VirtualKeyCode[] { VirtualKeyCode.LEFT });
+                        inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, VirtualKeyCode.LEFT);
                     }
                 }
                 else

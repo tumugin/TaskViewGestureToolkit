@@ -16,7 +16,7 @@ namespace WacomGesturePlugin
             foreach (var i in fingers)
             {
                 X += (i.X <= 1) ? i.X * 1920 : i.X;
-                Y += (i.Y <= 1) ? i.Y * 1920 : i.Y;
+                Y += (i.Y <= 1) ? i.Y * 1080 : i.Y;
             }
             X = X / fingers.Count();
             Y = Y / fingers.Count();
