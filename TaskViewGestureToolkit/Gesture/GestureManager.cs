@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsDesktop;
 using WindowsInput;
 using WindowsInput.Native;
 
@@ -12,6 +13,7 @@ namespace TaskViewGestureToolkit.Gesture
 {
     public class GestureManager
     {
+        public static bool useVirtualDesktopAPI = false;
         public PluginBase plugin;
         private bool isMoving = false;
         private int[] startPoint = { 0, 0 };
@@ -44,13 +46,27 @@ namespace TaskViewGestureToolkit.Gesture
                     {
                         //left
                         Debug.WriteLine($"[{plugin.pluginName} EVENT] LEFT");
-                        inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, VirtualKeyCode.RIGHT);
+                        if (useVirtualDesktopAPI)
+                        {
+                            VirtualDesktop.Current?.GetRight()?.Switch();
+                        }
+                        else
+                        {
+                            inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, VirtualKeyCode.RIGHT);
+                        }
                     }
                     else if (xDiff > 0)
                     {
                         //right
                         Debug.WriteLine($"[{plugin.pluginName} EVENT] RIGHT");
-                        inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, VirtualKeyCode.LEFT);
+                        if (useVirtualDesktopAPI)
+                        {
+                            VirtualDesktop.Current?.GetLeft()?.Switch();
+                        }
+                        else
+                        {
+                            inputSimulator.Keyboard.ModifiedKeyStroke(new VirtualKeyCode[] { VirtualKeyCode.LWIN, VirtualKeyCode.CONTROL }, VirtualKeyCode.LEFT);
+                        }
                     }
                 }
                 else
