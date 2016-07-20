@@ -35,8 +35,6 @@ namespace TaskViewGestureToolkit
 
         private static void onApplicationExit(object sender, EventArgs e)
         {
-            PluginManager.deactivateAllPlugins();
-            PluginManager.clearAllPlugins();
             ConfigSerialize.saveConfig(config);
         }
 
