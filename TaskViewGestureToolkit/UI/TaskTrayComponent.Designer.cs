@@ -32,9 +32,10 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.nIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.reloadPluginMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitApplicationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useAPIStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.exitApplicationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.writeLogMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nIconContextMenuStrip.SuspendLayout();
             // 
             // notifyIcon
@@ -48,22 +49,17 @@
             this.nIconContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reloadPluginMenuItem,
             this.useAPIStripMenuItem,
+            this.writeLogMenuItem,
             this.toolStripSeparator,
             this.exitApplicationMenuItem});
             this.nIconContextMenuStrip.Name = "nIconContextMenuStrip";
-            this.nIconContextMenuStrip.Size = new System.Drawing.Size(211, 70);
+            this.nIconContextMenuStrip.Size = new System.Drawing.Size(211, 98);
             // 
             // reloadPluginMenuItem
             // 
             this.reloadPluginMenuItem.Name = "reloadPluginMenuItem";
             this.reloadPluginMenuItem.Size = new System.Drawing.Size(210, 22);
             this.reloadPluginMenuItem.Text = "Reload plugins";
-            // 
-            // exitApplicationMenuItem
-            // 
-            this.exitApplicationMenuItem.Name = "exitApplicationMenuItem";
-            this.exitApplicationMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.exitApplicationMenuItem.Text = "Exit(&E)";
             // 
             // useAPIStripMenuItem
             // 
@@ -75,7 +71,19 @@
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(207, 6);
+            // 
+            // exitApplicationMenuItem
+            // 
+            this.exitApplicationMenuItem.Name = "exitApplicationMenuItem";
+            this.exitApplicationMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.exitApplicationMenuItem.Text = "Exit(&E)";
+            // 
+            // writeLogMenuItem
+            // 
+            this.writeLogMenuItem.Name = "writeLogMenuItem";
+            this.writeLogMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.writeLogMenuItem.Text = "Write log to file";
             this.nIconContextMenuStrip.ResumeLayout(false);
 
         }
@@ -87,5 +95,6 @@
         public System.Windows.Forms.ToolStripMenuItem exitApplicationMenuItem;
         public System.Windows.Forms.ToolStripMenuItem useAPIStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        public System.Windows.Forms.ToolStripMenuItem writeLogMenuItem;
     }
 }
