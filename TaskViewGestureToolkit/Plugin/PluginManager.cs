@@ -42,6 +42,14 @@ namespace TaskViewGestureToolkit.Plugin
             
         }
 
+        public static void loadFromPluginDir()
+        {
+            foreach (var path in System.IO.Directory.GetFiles(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\plugin"))
+            {
+                loadPlugin(path);
+            }
+        }
+
         public static void activateAllPlugins()
         {
             foreach(var p in pluginList)

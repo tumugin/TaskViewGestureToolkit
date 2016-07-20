@@ -17,10 +17,7 @@ namespace TaskViewGestureToolkit
         public static void Main(string[] args)
         {
             System.Windows.Forms.Application.EnableVisualStyles();
-            foreach (var path in System.IO.Directory.GetFiles(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\plugin"))
-            {
-                PluginManager.loadPlugin(path);
-            }
+            PluginManager.loadFromPluginDir();
             PluginManager.activateAllPlugins();
             UI.TaskTrayComponent ttComponent = new UI.TaskTrayComponent();
             ttComponent.notifyIcon.Icon = UI.StockIcon.getStackIcon();
@@ -46,6 +43,8 @@ namespace TaskViewGestureToolkit
         private static void reloadPluginMenuItemOnClick(object sender, EventArgs e)
         {
             PluginManager.deactivateAllPlugins();
+            PluginManager.clearAllPlugins();
+            PluginManager.loadFromPluginDir();
             PluginManager.activateAllPlugins();
         }
 
