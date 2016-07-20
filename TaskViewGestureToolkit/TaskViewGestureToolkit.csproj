@@ -45,6 +45,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -71,6 +73,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Config\ConfigClass.cs" />
+    <Compile Include="Config\ConfigSerialize.cs" />
+    <Compile Include="UI\StockIcon.cs" />
+    <Compile Include="UI\TaskTrayComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TaskTrayComponent.Designer.cs">
+      <DependentUpon>TaskTrayComponent.cs</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -105,7 +116,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.manifest" />
+    <EmbeddedResource Include="UI\TaskTrayComponent.resx">
+      <DependentUpon>TaskTrayComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,9 +132,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PluginBaseLib\PluginBaseLib.csproj">
       <Project>{2094fde0-20e3-48d7-8d62-2d7e7c2f38fd}</Project>

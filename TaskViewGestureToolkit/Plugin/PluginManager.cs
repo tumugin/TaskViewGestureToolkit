@@ -16,32 +16,47 @@ namespace TaskViewGestureToolkit.Plugin
 
         public static void loadPlugin(String path)
         {
-            var asm = Assembly.LoadFrom(path);
-            PluginBase inst = null;
-            foreach (var t in asm.GetTypes())
+            try
             {
-                if (t.IsInterface) continue;
-                if (t.IsAbstract) continue;
-                if (t.BaseType.Name != "PluginBase") continue;
-                inst = Activator.CreateInstance(t) as PluginBase;
-                if (inst != null) break;
-            }
-            if(inst != null)
+                var asm = Assembly.LoadFrom(path);
+                PluginBase inst = null;
+                foreach (var t in asm.GetTypes())
+                {
+                    if (t.IsInterface) continue;
+                    if (t.IsAbstract) continue;
+                    if (t.BaseType.Name != "PluginBase") continue;
+                    inst = Activator.CreateInstance(t) as PluginBase;
+                    if (inst != null) break;
+                }
+                if (inst != null)
+                {
+                    GestureManager gman = new GestureManager();
+                    gman.plugin = inst;
+                    pluginList.Add(gman);
+                    Debug.WriteLine($"[PLUGIN]{inst.pluginName} loaded.");
+                }
+            }catch(Exception ex)
             {
-                GestureManager gman = new GestureManager();
-                gman.plugin = inst;
-                pluginList.Add(gman);
-                Debug.WriteLine($"[PLUGIN]{inst.pluginName} loaded.");
+                Debug.WriteLine($"[PLUGIN]{System.IO.Path.GetFileName(path)} load failed.");
             }
+            
         }
 
         public static void activateAllPlugins()
         {
             foreach(var p in pluginList)
             {
-                p.plugin.onGesture -= p.onGesture;
-                p.plugin.onGesture += p.onGesture;
-                p.plugin.initializePlugin();
+                try
+                {
+                    p.plugin.onGesture -= p.onGesture;
+                    p.plugin.onGesture += p.onGesture;
+                    p.plugin.initializePlugin();
+                    Debug.WriteLine($"[PLUGIN]{p.plugin.pluginName} init OK.");
+                }
+                catch(Exception ex)
+                {
+                    Debug.WriteLine($"[PLUGIN]{p.plugin.pluginName} init failed.");
+                }
             }
         }
 
