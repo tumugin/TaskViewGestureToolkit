@@ -33,11 +33,11 @@ namespace TaskViewGestureToolkit.Plugin
                     GestureManager gman = new GestureManager();
                     gman.plugin = inst;
                     pluginList.Add(gman);
-                    Debug.WriteLine($"[PLUGIN]{inst.pluginName} loaded.");
+                    Trace.WriteLine($"[PLUGIN]{inst.pluginName} loaded.");
                 }
             }catch(Exception ex)
             {
-                Debug.WriteLine($"[PLUGIN]{System.IO.Path.GetFileName(path)} load failed.");
+                Trace.WriteLine($"[PLUGIN]{System.IO.Path.GetFileName(path)} load failed.");
             }
             
         }
@@ -51,11 +51,11 @@ namespace TaskViewGestureToolkit.Plugin
                     p.plugin.onGesture -= p.onGesture;
                     p.plugin.onGesture += p.onGesture;
                     p.plugin.initializePlugin();
-                    Debug.WriteLine($"[PLUGIN]{p.plugin.pluginName} init OK.");
+                    Trace.WriteLine($"[PLUGIN]{p.plugin.pluginName} init OK.");
                 }
                 catch(Exception ex)
                 {
-                    Debug.WriteLine($"[PLUGIN]{p.plugin.pluginName} init failed.");
+                    Trace.WriteLine($"[PLUGIN]{p.plugin.pluginName} init failed.");
                 }
             }
         }

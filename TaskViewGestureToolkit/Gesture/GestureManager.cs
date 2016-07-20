@@ -26,7 +26,7 @@ namespace TaskViewGestureToolkit.Gesture
                 //start event
                 isMoving = true;
                 startPoint = new int[] { x, y };
-                Debug.WriteLine($"[{plugin.pluginName} START]");
+                Trace.WriteLine($"[{plugin.pluginName} START]");
             }
             else if (etype == PluginBase.EventType.OnGestureStart && isMoving)
             {
@@ -39,13 +39,13 @@ namespace TaskViewGestureToolkit.Gesture
                 isMoving = false;
                 int xDiff = x - startPoint[0];
                 int yDiff = y - startPoint[1];
-                Debug.WriteLine($"[{plugin.pluginName} END] ({xDiff},{yDiff})");
+                Trace.WriteLine($"[{plugin.pluginName} END] ({xDiff},{yDiff})");
                 if (Math.Abs(xDiff) > Math.Abs(yDiff))
                 {
                     if (xDiff < 0)
                     {
                         //left
-                        Debug.WriteLine($"[{plugin.pluginName} EVENT] LEFT");
+                        Trace.WriteLine($"[{plugin.pluginName} EVENT] LEFT");
                         if (useVirtualDesktopAPI)
                         {
                             VirtualDesktop.Current?.GetRight()?.Switch();
@@ -58,7 +58,7 @@ namespace TaskViewGestureToolkit.Gesture
                     else if (xDiff > 0)
                     {
                         //right
-                        Debug.WriteLine($"[{plugin.pluginName} EVENT] RIGHT");
+                        Trace.WriteLine($"[{plugin.pluginName} EVENT] RIGHT");
                         if (useVirtualDesktopAPI)
                         {
                             VirtualDesktop.Current?.GetLeft()?.Switch();
@@ -74,13 +74,13 @@ namespace TaskViewGestureToolkit.Gesture
                     if (yDiff < 0)
                     {
                         //down
-                        Debug.WriteLine($"[{plugin.pluginName} EVENT] DOWN");
+                        Trace.WriteLine($"[{plugin.pluginName} EVENT] DOWN");
                         inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.TAB);
                     }
                     else if (yDiff > 0)
                     {
                         //up
-                        Debug.WriteLine($"[{plugin.pluginName} EVENT] UP");
+                        Trace.WriteLine($"[{plugin.pluginName} EVENT] UP");
                         inputSimulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.TAB);
                     }
                 }
