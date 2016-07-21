@@ -40,6 +40,7 @@ namespace TaskViewGestureToolkit
         private static void onApplicationExit(object sender, EventArgs e)
         {
             ConfigSerialize.saveConfig(config);
+            uiman.ttComponent.notifyIcon.Dispose();
         }
     }
 }
