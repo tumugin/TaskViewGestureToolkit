@@ -56,8 +56,8 @@ namespace TaskViewGestureToolkit.Plugin
             {
                 try
                 {
-                    p.plugin.onGesture -= p.onGesture;
-                    p.plugin.onGesture += p.onGesture;
+                    p.plugin.onGesture -= p.onGestureAsync;
+                    p.plugin.onGesture += p.onGestureAsync;
                     p.plugin.initializePlugin();
                     Trace.WriteLine($"[PLUGIN]{p.plugin.pluginName} init OK.");
                 }
@@ -72,7 +72,7 @@ namespace TaskViewGestureToolkit.Plugin
         {
             foreach (var p in pluginList)
             {
-                p.plugin.onGesture -= p.onGesture;
+                p.plugin.onGesture -= p.onGestureAsync;
                 p.plugin.deletePlugin();
             }
         }

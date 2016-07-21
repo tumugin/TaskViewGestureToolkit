@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WindowsDesktop;
 using WindowsInput;
@@ -18,6 +19,14 @@ namespace TaskViewGestureToolkit.Gesture
         private bool isMoving = false;
         private int[] startPoint = { 0, 0 };
         IInputSimulator inputSimulator = new InputSimulator();
+
+        public void onGestureAsync(int x, int y, PluginBase.EventType etype)
+        {
+            new Thread(() =>
+            {
+                onGesture(x, y, etype);
+            }).Start();
+        }
 
         public void onGesture(int x, int y, PluginBase.EventType etype)
         {
