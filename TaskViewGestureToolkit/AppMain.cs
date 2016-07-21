@@ -9,6 +9,7 @@ using TaskViewGestureToolkit.Gesture;
 using TaskViewGestureToolkit.Log;
 using TaskViewGestureToolkit.Plugin;
 using TaskViewGestureToolkit.UI;
+using TaskViewGestureToolkit.Updater;
 
 namespace TaskViewGestureToolkit
 {
@@ -30,6 +31,8 @@ namespace TaskViewGestureToolkit
             //init plugin
             PluginManager.loadFromPluginDir();
             PluginManager.activateAllPlugins();
+            //start update checker
+            UpdateChecker.checkUpdate();
             //start app
             Application.Run();
         }

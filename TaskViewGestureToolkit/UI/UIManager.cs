@@ -13,10 +13,12 @@ namespace TaskViewGestureToolkit.UI
 {
     public class UIManager
     {
+        public UI.TaskTrayComponent ttComponent;
+
         public UIManager()
         {
             System.Windows.Forms.Application.EnableVisualStyles();
-            UI.TaskTrayComponent ttComponent = new UI.TaskTrayComponent();
+            ttComponent = new UI.TaskTrayComponent();
             ttComponent.notifyIcon.Icon = UI.StockIcon.getStackIcon();
             ttComponent.exitApplicationMenuItem.Click += exitApplicationMenuItemOnClick;
             ttComponent.reloadPluginMenuItem.Click += reloadPluginMenuItemOnClick;
