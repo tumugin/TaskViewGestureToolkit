@@ -22,10 +22,10 @@ namespace TaskViewGestureToolkit.Gesture
 
         public void onGestureAsync(int x, int y, PluginBase.EventType etype)
         {
-            new Thread(() =>
+            Tools.STAThreadTool.RunSTAThread(() =>
             {
                 onGesture(x, y, etype);
-            }).Start();
+            });
         }
 
         public void onGesture(int x, int y, PluginBase.EventType etype)

@@ -77,6 +77,7 @@
     <Compile Include="Config\ConfigSerialize.cs" />
     <Compile Include="Log\Logger.cs" />
     <Compile Include="Log\LogListener.cs" />
+    <Compile Include="Tools\STAThreadTool.cs" />
     <Compile Include="UI\StockIcon.cs" />
     <Compile Include="UI\TaskTrayComponent.cs">
       <SubType>Component</SubType>
