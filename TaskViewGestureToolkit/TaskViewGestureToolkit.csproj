@@ -60,10 +60,6 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="VirtualDesktop, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtualDesktop.1.0.3\lib\net46\VirtualDesktop.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -138,6 +134,10 @@
     <ProjectReference Include="..\PluginBaseLib\PluginBaseLib.csproj">
       <Project>{2094fde0-20e3-48d7-8d62-2d7e7c2f38fd}</Project>
       <Name>PluginBaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VirtualDesktop\source\VirtualDesktop\VirtualDesktop.csproj">
+      <Project>{ab848ecd-76aa-41c0-b63d-86a8591b25aa}</Project>
+      <Name>VirtualDesktop</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
