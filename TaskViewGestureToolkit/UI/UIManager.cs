@@ -46,6 +46,7 @@ namespace TaskViewGestureToolkit.UI
 
         private void exitApplicationMenuItemOnClick(object sender, EventArgs e)
         {
+            PluginManager.deactivateAllPlugins();
             Application.Exit();
         }
     }
