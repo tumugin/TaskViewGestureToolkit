@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WacomTester", "WacomTester\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualDesktop", "VirtualDesktop\source\VirtualDesktop\VirtualDesktop.csproj", "{AB848ECD-76AA-41C0-B63D-86A8591B25AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseGesturePlugin", "MouseGesturePlugin\MouseGesturePlugin.csproj", "{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,7 +42,6 @@ Global
 		{309C6C32-4FB6-4CAB-A297-0A5668ECBB27}.Release|x86.ActiveCfg = Release|Any CPU
 		{309C6C32-4FB6-4CAB-A297-0A5668ECBB27}.Release|x86.Build.0 = Release|Any CPU
 		{1E0B956C-9059-49AE-AAEB-FCC4161FD50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E0B956C-9059-49AE-AAEB-FCC4161FD50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E0B956C-9059-49AE-AAEB-FCC4161FD50A}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{1E0B956C-9059-49AE-AAEB-FCC4161FD50A}.Debug|x64.Build.0 = Debug|Any CPU
 		{1E0B956C-9059-49AE-AAEB-FCC4161FD50A}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -52,7 +53,6 @@ Global
 		{1E0B956C-9059-49AE-AAEB-FCC4161FD50A}.Release|x86.ActiveCfg = Release|Any CPU
 		{1E0B956C-9059-49AE-AAEB-FCC4161FD50A}.Release|x86.Build.0 = Release|Any CPU
 		{6BF793F5-4112-4A94-889C-DBF560BBA10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BF793F5-4112-4A94-889C-DBF560BBA10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BF793F5-4112-4A94-889C-DBF560BBA10C}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{6BF793F5-4112-4A94-889C-DBF560BBA10C}.Debug|x64.Build.0 = Debug|Any CPU
 		{6BF793F5-4112-4A94-889C-DBF560BBA10C}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -111,6 +111,18 @@ Global
 		{AB848ECD-76AA-41C0-B63D-86A8591B25AA}.Release|x64.Build.0 = Release|x64
 		{AB848ECD-76AA-41C0-B63D-86A8591B25AA}.Release|x86.ActiveCfg = Release|x86
 		{AB848ECD-76AA-41C0-B63D-86A8591B25AA}.Release|x86.Build.0 = Release|x86
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Debug|x86.Build.0 = Debug|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Release|x64.Build.0 = Release|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Release|x86.ActiveCfg = Release|Any CPU
+		{1B2C73EF-D0D5-494E-B619-4D57B6FB9F46}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
