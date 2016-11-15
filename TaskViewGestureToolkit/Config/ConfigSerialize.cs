@@ -14,7 +14,10 @@ namespace TaskViewGestureToolkit.Config
             if (!System.IO.File.Exists($"{System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)}\\{CONFIG_FILE}")) return new ConfigClass();
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(ConfigClass));
             var sr = new System.IO.StreamReader($"{System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)}\\{CONFIG_FILE}", new System.Text.UTF8Encoding(false));
-            return (ConfigClass)serializer.Deserialize(sr);
+            ConfigClass cfg = (ConfigClass)serializer.Deserialize(sr);
+            sr.Close();
+            sr.Dispose();
+            return cfg;
         }
         public static void saveConfig(ConfigClass config)
         {
