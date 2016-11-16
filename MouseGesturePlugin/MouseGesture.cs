@@ -34,25 +34,28 @@ namespace MouseGesturePlugin
 
         private void mouseMoveChecker()
         {
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            System.Drawing.Point point;
             bool flag = false;
-            Trace.WriteLine($"SCREEN={screenHeight}x{screenWidth}");
             while (true)
             {
-                point = Cursor.Position;
-                //Trace.WriteLine($"POS={point.X}x{point.Y} FLAG={flag.ToString()}");
-                if (flag == false && point.X >= screenWidth - 5 && point.Y <= 5)
+                System.Drawing.Point point = Cursor.Position;
+                foreach (var screen in Screen.AllScreens)
                 {
-                    flag = true;
-                    callOnGesture(0, 0, EventType.OnGestureStart);
-                    callOnGesture(0, 10, EventType.OnGestureEnd);
-                }else
-                {
-                    if(!(point.X >= screenWidth - 5 && point.Y <= 5)) flag = false;
+                    if(screen.Bounds.X <= point.X && screen.Bounds.Y <= point.Y && (screen.Bounds.X + screen.Bounds.Width) >= point.X && (screen.Bounds.Y + screen.Bounds.Height) >= point.Y)
+                    {
+                        //cursor is in this screen
+                        System.Drawing.Point screenCursorPos = new System.Drawing.Point(point.X - screen.Bounds.X,point.Y - screen.Bounds.Y);
+                        if(!flag && screenCursorPos.X >= screen.Bounds.Width - 5 && screenCursorPos.Y <= 5)
+                        {
+                            flag = true;
+                            callOnGesture(0, 0, EventType.OnGestureStart);
+                            callOnGesture(0, 10, EventType.OnGestureEnd);
+                        }else if (!(screenCursorPos.X >= screen.Bounds.Width - 5 && screenCursorPos.Y <= 5))
+                        {
+                            flag = false;
+                        }
+                    }
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(300);
             }
         }
     }
