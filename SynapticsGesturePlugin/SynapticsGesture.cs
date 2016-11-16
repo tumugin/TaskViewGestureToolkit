@@ -34,10 +34,11 @@ namespace SynapticsGesturePlugin
 
         public override void deletePlugin()
         {
+            synTouchPad.OnPacket -= SynTouchPad_OnPacket;
             synTouchPad.Deactivate();
             synApi.Deactivate();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(synTouchPad);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(synApi);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(synTouchPad);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(synApi);
         }
 
         public override void initializePlugin()
